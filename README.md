@@ -1,5 +1,4 @@
 ### CVR-Prediction
 
-Source of Data : [Criteo Sponsored Search Conversion Log Dataset]
+Source of Data : [Criteo Sponsored Search Conversion Log Dataset]: https://ailab.criteo.com/criteo-sponsored-search-conversion-log-dataset/
 
-[link]: https://ailab.criteo.com/criteo-sponsored-search-conversion-log-dataset/
