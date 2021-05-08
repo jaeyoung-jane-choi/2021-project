@@ -32,7 +32,7 @@ def read_data(dir,type='csv'):
 def preprocess(df, task='test'):
 
     if task == 'test':
-        with open('/Users/janechoi/PycharmProjects/LINEPLUS/MODEL/encoder.pickle', 'rb') as fr:
+        with open('/Users/janechoi/PycharmProjects/MODEL/encoder.pickle', 'rb') as fr:
             encoder = pickle.load(fr)
     else: encoder = defaultdict(LabelEncoder)
 
@@ -51,7 +51,7 @@ def preprocess(df, task='test'):
 
     #save encoder
     if task == 'train':
-        with open('/Users/janechoi/PycharmProjects/LINEPLUS/MODEL/encoder.pickle', 'wb') as fw:
+        with open('/Users/janechoi/PycharmProjects/MODEL/encoder.pickle', 'wb') as fw:
             pickle.dump(encoder, fw)
 
     return df_x,y
@@ -85,10 +85,10 @@ def submission(pred_y,prob_y,subpath,task):
 
 if __name__ == '__main__':
     # loc to save models, txt files
-    savepath = "/Users/janechoi/PycharmProjects/LINEPLUS/FINALDATA/"
+    savepath = "/Users/janechoi/PycharmProjects/FINALDATA/"
 
     # loc to save final txt file
-    subpath = '/Users/janechoi/PycharmProjects/LINEPLUS/SUB/'
+    subpath = '/Users/janechoi/PycharmProjects/SUB/'
 
     #read data
     train = read_data(savepath+'train.csv')
@@ -103,7 +103,7 @@ if __name__ == '__main__':
     train_LR(train_x, train_y)
 
     #Predict
-    clf = joblib.load('/Users/janechoi/PycharmProjects/LINEPLUS/MODEL/model.pkl')
+    clf = joblib.load('/Users/janechoi/PycharmProjects/MODEL/model.pkl')
     test_pred_y, test_prob_y= predict_LR(test_x, test_y, clf)
     train_pred_y, train_prob_y= predict_LR(train_x, train_y,clf)
 
@@ -116,13 +116,13 @@ if __name__ == '__main__':
 
 # if __name__ == '__main__':
 #     # loc to save models, txt files
-#     savepath = "/Users/janechoi/PycharmProjects/LINEPLUS/FINALDATA/"
+#     savepath = "/Users/janechoi/PycharmProjects/FINALDATA/"
 #
 #     # loc to save final txt file
-#     subpath = '/Users/janechoi/PycharmProjects/LINEPLUS/SUB/'
+#     subpath = '/Users/janechoi/PycharmProjects/SUB/'
 #
 #     #read data
-#     train = read_data('/Users/janechoi/PycharmProjects/LINEPLUS/FLASK/0501.txt', type ='txt')
+#     train = read_data('/Users/janechoi/PycharmProjects/FLASK/0501.txt', type ='txt')
 #
 #     #Preprocess data
 #     train_x, train_y = preprocess(df= train)
@@ -131,7 +131,7 @@ if __name__ == '__main__':
 
 
     #Predict
-    clf = joblib.load('/Users/janechoi/PycharmProjects/LINEPLUS/MODEL/model.pkl')
+    clf = joblib.load('/Users/janechoi/PycharmProjects/MODEL/model.pkl')
     train_pred_y, train_prob_y= predict_LR(train_x,train_y, clf)
 
 
