@@ -104,7 +104,7 @@ def ffm_train(savepath, datapath):
     #k : latent factor size
 
 
-    model.fit(param=param, model_path= "/Users/janechoi/PycharmProjects/LINEPLUS/MODEL/model.out") #SAVE the MODEL
+    model.fit(param=param, model_path= "/Users/janechoi/PycharmProjects/MODEL/model.out") #SAVE the MODEL
 
     # model.cv(param)# Cross-Validation으로도 학습 가능
 
@@ -122,16 +122,16 @@ def ffm_predict(task, model , datapath, savepath):
     # Prediction 1: PROBABILITY
     model.setSigmoid()
     model.setTest(datapath)
-    model.predict("/Users/janechoi/PycharmProjects/LINEPLUS/MODEL/model.out",
+    model.predict("/Users/janechoi/PycharmProjects/MODEL/model.out",
                   savepath+ str(task)+"_predictions_sigmoid.txt") #predictions 으로 예측 파일
 
 
     #PREDICTION 2 : LABELS
     ffm = xl.create_ffm()
-    ffm.setPreModel("/Users/janechoi/PycharmProjects/LINEPLUS/MODEL/model.out")
+    ffm.setPreModel("/Users/janechoi/PycharmProjects/MODEL/model.out")
     ffm.setSign()
     ffm.setTest(datapath)
-    ffm.predict("/Users/janechoi/PycharmProjects/LINEPLUS/MODEL/model.out",
+    ffm.predict("/Users/janechoi/PycharmProjects/MODEL/model.out",
                   savepath+ str(task)+"_predictions_binary.txt")
 
 
@@ -160,10 +160,10 @@ def submission(path1,path2, savepath, task):
 
 if __name__ == '__main__':
     #loc to save models, txt files
-    savepath = "/Users/janechoi/PycharmProjects/LINEPLUS/FINALDATA/"
+    savepath = "/Users/janechoi/PycharmProjects/FINALDATA/"
 
     #loc to save final txt file
-    subpath = '/Users/janechoi/PycharmProjects/LINEPLUS/SUB/'
+    subpath = '/Users/janechoi/PycharmProjects/SUB/'
 
 
     # 1. CREATE TXT FILES FOR BOTH TRAIN & TEST
