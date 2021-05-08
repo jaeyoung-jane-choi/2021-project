@@ -14,7 +14,7 @@ from LR import read_data, preprocess , predict_LR,submission
 
 def load_model():
     global model
-    model = joblib.load('/Users/janechoi/PycharmProjects/LINEPLUS/MODEL/model.pkl')
+    model = joblib.load('/Users/janechoi/PycharmProjects/MODEL/model.pkl')
 
 
 
@@ -38,7 +38,7 @@ def getfile():
    if request.method == 'POST':
 
         #SAVE DATA FROM WEB
-        PATH = "/Users/janechoi/PycharmProjects/LINEPLUS/FLASK/WEBDATA/"
+        PATH = "/Users/janechoi/PycharmProjects/FLASK/WEBDATA/"
 
         f = request.files['file']
         f.save(os.path.join(PATH,f.filename))
