@@ -1,1 +1,1 @@
-### returning to the basics for stats using python 
+> basics for stats using python 
