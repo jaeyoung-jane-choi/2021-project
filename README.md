@@ -1,1 +1,1 @@
-# 2021-stats-python
+### returning to the basics for stats using python 
