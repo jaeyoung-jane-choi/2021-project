@@ -1,4 +1,11 @@
-### CVR-Prediction
+### Small Projects Throughout 2021 
 
-Data Source:  [Criteo Sponsored Search Conversion Log Dataset](https://ailab.criteo.com/criteo-sponsored-search-conversion-log-dataset/)
+These are small projects I did while 2021 
 
+> CVR prediction 
+
+> Algorithm practice 
+
+> Stats Practice 
+
+> Handling Unbalanced Data 
